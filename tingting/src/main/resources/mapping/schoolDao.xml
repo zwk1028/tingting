@@ -7,4 +7,10 @@
 	<select id="findAll" resultType="School">
 		select id,name from school
 	</select>
+
+	<select id="getName" resultType="String">
+		select name 
+		from school where
+		id=#{schoolId}
+	</select>
 </mapper>

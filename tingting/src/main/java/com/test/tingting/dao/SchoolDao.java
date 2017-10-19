@@ -14,4 +14,11 @@ public interface SchoolDao {
 	 * @return
 	 */
 	public List<School> findAll();
+	
+	
+	/**
+	 * @param id
+	 * @return
+	 */
+	public String getName(String schoolId);
 }

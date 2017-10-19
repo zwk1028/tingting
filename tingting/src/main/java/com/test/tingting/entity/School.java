@@ -1,5 +1,6 @@
 package com.test.tingting.entity;
 
+
 public class School {
 	
 	private String id;
