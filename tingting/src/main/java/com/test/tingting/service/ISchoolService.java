@@ -1,16 +1,18 @@
 package com.test.tingting.service;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
 import com.test.tingting.entity.School;
 
-@WebService
+@Path("/school")
 public interface ISchoolService {
-
-	@WebMethod
-	String getName(String schoolId);
-
-	@WebMethod
-	School getSchool(String schoolId);
+	
+	@Path("/list")
+	@GET
+	@Produces("application/json")
+	public List<School> findAll();
 }

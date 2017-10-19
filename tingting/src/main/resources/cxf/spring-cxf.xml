@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+ http://cxf.apache.org/jaxrs
+ http://cxf.apache.org/schemas/jaxrs.xsd
+ http://cxf.apache.org/jaxws
+ http://cxf.apache.org/schemas/jaxws.xsd">
+	
+	<!--rest 服务  -->
+	<jaxrs:server id="schoolRestService"  address="/">
+		<jaxrs:serviceBeans>
+			<ref bean="schoolServiceImpl" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
+		</jaxrs:providers>
+	</jaxrs:server>
+	
+	<!--webservice soap  -->
+	<jaxws:server id="studentWebService" serviceClass="com.test.tingting.service.IStudentService" address="/student">
+		<jaxws:serviceBean>
+			<ref bean="studentServiceImpl"/>
+		</jaxws:serviceBean>
+	</jaxws:server>
+</beans>

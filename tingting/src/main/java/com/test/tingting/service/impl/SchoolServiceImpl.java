@@ -1,5 +1,7 @@
 package com.test.tingting.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +16,8 @@ public class SchoolServiceImpl implements ISchoolService {
 	private SchoolDao schoolDao;
 
 	@Override
-	public String getName(String schoolId) {
-		return schoolDao.getName(schoolId);
+	public List<School> findAll() {
+		return schoolDao.findAll();
 	}
 
-	@Override
-	public School getSchool(String schoolId) {
-		return null;
-	}
 }
